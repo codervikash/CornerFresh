@@ -16,13 +16,21 @@
             android:layout_height="200dp"
             android:id="@+id/order_layout"
             android:orientation="horizontal"
-            android:layout_weight="1.00">
+            android:layout_weight="1.00"
+            android:weightSum="1">
+
 
             <EditText
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:ems="10"
                 android:id="@+id/editText"
-                android:inputType="text"/>
+                android:isScrollContainer="true"
+                android:scrollHorizontally="true"
+                android:layout_margin="10dp"
+                android:shadowColor="#81171522"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
@@ -30,7 +38,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="383dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Continue"
                 android:id="@+id/button"

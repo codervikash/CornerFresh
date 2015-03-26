@@ -1,12 +1,14 @@
 package in.cornerstores.cornerfresh;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity
@@ -32,16 +34,19 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setup(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer), mToolbar);
         // populate the navigation drawer
         mNavigationDrawerFragment.setUserData("Vikash Kumar", "mail@vikashkumar.me", BitmapFactory.decodeResource(getResources(), R.drawable.avatar));
+
+
+        final Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ShopActivity.class));
+            }
+        });
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        Toast.makeText(this, "Menu item selected -> " + position, Toast.LENGTH_SHORT).show();
-        switch (position) {
-            case 1 :
-
-        }
+    
     }
 
 

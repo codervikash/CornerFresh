@@ -13,8 +13,12 @@
     <string name="title_activity_sign_up">SignUpActivity</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_shop">ShopActivity</string>
-    <string name="title_activity_address">AddressActivity</string>
-    <string name="title_activity_order">OrderActivity</string>
+    <string name="title_activity_shop">Choose Shop</string>
+    <string name="title_activity_address">Enter your address</string>
+    <string name="title_activity_order">Confirm order</string>
+
+    <string name="store1">Nilgiris, Padur, Chennai</string>
+    <string name="store2">Heritage, Padur, Chennai</string>
+    <string name="store3">Thottam, Padur, Chennai</string>
 
 </resources>
