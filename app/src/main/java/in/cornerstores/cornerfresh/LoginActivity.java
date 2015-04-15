@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.appspot.corner_fresh.fresh_api.FreshApi;
+import com.appspot.corner_fresh.fresh_api.model.UsersCollection;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -17,7 +17,6 @@ import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.Json;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 
@@ -175,12 +174,11 @@ public class LoginActivity extends Activity implements
         JsonFactory jsonFactory = new JacksonFactory();
 
         FreshApi.Builder builder = new FreshApi.Builder( transport, jsonFactory, null );
-        builder.setApplicationName( Fresh );
 
         FreshApi service = builder.build();
 
         try {
-            Json response = service.fresh_api().users.list( ).execute();
+            UsersCollection response = service.users().list().execute();
             Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Toast.makeText(getApplicationContext(), "sexyfghfd", Toast.LENGTH_SHORT).show();
